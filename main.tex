@@ -476,12 +476,40 @@ wget https://github.com/kamujuaakash/EE3900/blob/main/codes/hn.py
 \label{fig:dtft}
 \end{figure}
 
-\item Express $h(n)$ in terms of $H\brak{e^{\j \omega}}$.\\
-\solution 
+
+\item Express $h(n)$ in terms of $H\brak{e^{\j\omega}}$	
+	
+	\solution 
 \begin{align}
-h(n) = \frac{1}{2\pi}\int_{-\pi}^
-{\pi}H\brak{\j \omega}e^{\j \omega n}\,dw
-\end{align}
+\int_{-\pi}^{\pi} H(e^{\j\omega}) e^{\j\omega n} \der{\omega} \\
+= \int_{-\pi}^{\pi} \sum_{k=-\infty}^\infty h(k)  e^{-\j\omega k} e^{\j\omega n} \der{\omega} \\
+= \sum_{k=-\infty}^\infty h(k) \int_{-\pi}^{\pi} e^{\j\omega(n-k)} \der{\omega} 
+\end{align}	
+	Now,
+	\begin{align}
+		 \int_{-\pi}^{\pi} e^{\j\omega(n-k)} \der{\omega} 
+		 &= \begin{cases}
+		 	\int_{-\pi}^\pi \der{\omega} & n-k = 0 \\
+		 	\left.\frac{\exp\brak{\j\omega(n-k)}}{\j(n-k)}\right|_{-\pi}^\pi & n-k \ne 0
+		 \end{cases} \\		 
+		 &= \begin{cases}
+		 	2\pi & n-k = 0 \\
+		 	0 & n-k \ne 0
+		 \end{cases} \\
+		 &= 2\pi \delta(n-k)
+	\end{align}
+	
+	Thus,
+	\begin{align}
+		\int_{-\pi}^{\pi} H(e^{\j\omega}) e^{\j\omega n} \der{\omega} &= 2\pi\sum_{k=-\infty}^\infty h(k) \delta(n-k) \\
+		&= 2\pi h(n) * \delta(n) \\
+		&= 2\pi h(n)
+	\end{align}
+	
+	Therefore, $h(n)$ is given by the inverse DTFT (IDTFT) of $H\brak{e^{\j\omega}}$
+	\begin{align}
+		h(n) &= \frac{1}{2\pi} \int_{-\pi}^{\pi} H(e^{\j\omega}) e^{\j\omega n} \der{\omega} 
+	\end{align}
 \end{enumerate}
 
 \section{Impulse Response}

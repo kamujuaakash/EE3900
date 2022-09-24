@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
 x = np.arange(-3,4,1)
 y = np.zeros(len(x))
 

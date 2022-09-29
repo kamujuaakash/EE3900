@@ -5,7 +5,7 @@ from scipy import signal
 import numpy as np
 
 # Read .wav file 
-input_signal, fs = sf.read('simulation/codes/Sound_Noise.wav') 
+input_signal, fs = sf.read('Simulation/codes/Sound_Noise.wav') 
 
 # Sampling frequency of input signal
 sampl_freq = fs
@@ -41,4 +41,4 @@ output_signal = np.real(y)
 print(output_signal)
 
 # Write the output signal into .wav file
-sf.write('simulation/codes/7.1.wav', output_signal, fs) 
+sf.write('Simulation/codes/7.1.wav', output_signal, fs) 

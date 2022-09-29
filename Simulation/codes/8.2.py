@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Read .wav file 
-input_signal, fs = sf.read('simulation/codes/Sound_Noise.wav') 
+input_signal, fs = sf.read('Simulation/codes/Sound_Noise.wav') 
 
 # Sampling frequency of input signal
 sampl_freq = fs
@@ -42,7 +42,7 @@ plt.title('Filter Output')
 plt.xlabel('$n$')
 plt.ylabel('$y(n)$')
 plt.grid()
-plt.savefig('simulation/figs/7.2.1.png')
+plt.savefig('Simulation/figs/7.2.1.png')
 plt.show()
 
 Omega = np.linspace(-3*np.pi, 3*np.pi, 200)
@@ -54,7 +54,7 @@ plt.title('Filter Frequency Response')
 plt.xlabel('$\omega$')
 plt.ylabel('$|H(e^{\jmath \omega})|$')
 plt.grid()
-plt.savefig('simulation/figs/7.2.2.png')
+plt.savefig('Simulation/figs/7.2.2.png')
 plt.show()
 
 filter_impulse = np.real(np.fft.ifft(H))
@@ -65,5 +65,5 @@ plt.title('Filter Impulse Response')
 plt.xlabel('$n$')
 plt.ylabel('$h(n)$')
 plt.grid()
-plt.savefig('simulation/figs/7.2.3.png')
+plt.savefig('Simulation/figs/7.2.3.png')
 plt.show()

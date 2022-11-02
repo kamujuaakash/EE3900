@@ -10,5 +10,5 @@ python3 4.2.py
 python3 4.3.py
 python3 4.7.py
 cd ..
-pdflatex main.tex
+#pdflatex main.tex
 
